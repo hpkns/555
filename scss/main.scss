@@ -1,0 +1,77 @@
+@import 'compass/reset';
+@import 'compass/css3';
+
+html {
+    font: 16px/1.8 'Helvetica neue', sans-serif;
+    color: #444;
+    background-color: #323232;
+}
+
+.site {
+    &__title {
+        font: 900 2em/1.4 'helvetica neue', sans-serif;
+        text-align: center;
+        margin: 1rem;
+        color: white;
+    }
+    &__content {
+        max-width: 40em;
+        padding: 1em;
+        margin: auto;
+    }
+}
+
+.inputs {
+    @include flexbox((
+        display: flex
+    ));
+    margin-bottom: 1em;
+}
+.form-field {
+    @include flexbox((
+        flex-grow: 1
+    ));
+    background: white;
+    padding: 1em;
+    text-align: center;
+
+    &:not(:last-child){
+        margin-right: 1em;
+    }
+}
+
+.output {
+    &s {
+        @include flexbox((
+            display: flex
+        ));
+    }
+
+    @include flexbox((
+        flex-grow: 1
+    ));
+    text-align: center;
+    background-color: #357799;
+    color: white;
+    padding: 1em;
+
+    &:nth-child(2) { background-color: adjust-hue(#357799, 90deg) }
+    &:nth-child(2) { background-color: #993535 }
+    &:nth-child(3) { background-color: adjust-hue(#357799, 180deg) }
+    &:nth-child(4) { background-color: adjust-hue(#357799, 270deg) }
+    
+    &:not(:last-child){
+        margin-right: 1em;
+    }
+
+    &__caption {
+        display: block;
+    }
+
+    &__value {
+        font-size: 1.5em;
+        font-weight: bold;
+
+    }
+
+}
